@@ -1,0 +1,41 @@
+#box {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#main {
+    margin: 10px;
+}
+#start {
+    background-color: green;
+}
+#clear {
+    background-color: yellow;
+
+    margin: 10px;
+}
+#abort {
+    background-color: red;
+}
+#fuel {
+    margin: 10px;
+}
+#sfuel {
+    background-color: green;
+}
+#stfuel {
+    background-color: red;
+}
+#emerbox {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#emer {
+    background-color: red;
+}
+#swbreaker {
+    background-color: green;
+}
