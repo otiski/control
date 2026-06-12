@@ -10,6 +10,8 @@ document.getElementById("start").onclick = function () {
     if (h12.textContent == "FUEL ACTIVE") {
         h1.textContent = "ON";
         localStorage.setItem("state", "ON");
+    } else if (localStorage.getItem("breakerState") == "red") {
+        alert("turn of breaker to start");
     } else {
         alert("start fuel to start");
     }
@@ -21,11 +23,16 @@ document.getElementById("abort").onclick = function () {
 document.getElementById("clear").onclick = function () {
     if (h1.textContent == "ON") {
         alert("Turn off engine to clear!");
+    } else if (localStorage.getItem("breakerState") == "red") {
+        alert("turn of breaker to start");
     } else {
         h1.textContent = "Clearing, wait 5 minutes before turning back on";
     }
 };
 document.getElementById("sfuel").onclick = function () {
+    if (localStorage.getItem("breakerState") == "red") {
+        alert("turn of breaker to start");
+    }
     h12.textContent = "FUEL ACTIVE";
     localStorage.setItem("fuelState", h12.textContent);
 };
@@ -41,6 +48,9 @@ document.getElementById("emer").onclick = function () {
     h1.textContent = "OFF";
     h12.textContent = "FUEL INACTIVE";
     breakBtn.style.backgroundColor = "red";
+    if (localStorage.getItem("breakerState") == "red") {
+        alert("turn of breaker to start");
+    }
 
     localStorage.setItem("fuelState", "FUEL INACTIVE");
     localStorage.setItem("state", "OFF");
