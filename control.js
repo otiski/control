@@ -60,5 +60,14 @@ document.getElementById("swbreaker").onclick = function () {
     if (localStorage.getItem("breakerState") == "red") {
         breakBtn.style.backgroundColor = "green";
         localStorage.setItem("breakerState", "green");
+    } else {
+        breakBtn.style.backgroundColor = "red";
+
+        h1.textContent = "OFF";
+        h12.textContent = "FUEL INACTIVE";
+
+        localStorage.setItem("fuelState", "FUEL INACTIVE");
+        localStorage.setItem("state", "OFF");
+        localStorage.setItem("breakerState", "red");
     }
 };
